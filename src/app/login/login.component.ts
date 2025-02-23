@@ -14,7 +14,6 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  errorMessage: string = '';
 
   constructor(private fb: FormBuilder,private authService: AuthService,private router: Router) {
     this.loginForm = this.fb.group({
