@@ -1,0 +1,88 @@
+/* Fondo oscuro para el contenedor principal */
+.container {
+    background-color: #1c1c1c;
+    border-radius: 15px;
+    padding: 20px;
+  }
+  
+  /* Estilo para el título */
+  h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: #ffcc00;
+    text-shadow: 2px 2px #000;
+  }
+  
+  /* Tarjeta de Favoritos */
+  .fav-card {
+    background-color: #2a2a2a;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .fav-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Título del Juego */
+  .fav-title {
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  
+  /* Botón de Eliminar */
+  .btn-danger {
+    background-color: #ff4d4d;
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-danger:hover {
+    background-color: #ff1a1a;
+  }
+  /* Contenedor del mensaje */
+.no-favorites {
+  color: #cccccc;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.no-favorites:hover {
+  transform: scale(1.02);
+}
+
+/* Imagen para darle un toque visual */
+.no-fav-image {
+  max-width: 150px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.no-fav-image:hover {
+  opacity: 1;
+}
+
+/* Texto del mensaje */
+.no-fav-text {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffcc00;
+  text-shadow: 1px 1px #000;
+}
+
+/* Botón para explorar juegos */
+.btn-warning {
+  color: #333;
+  background-color: #ffcc00;
+  border: none;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.btn-warning:hover {
+  background-color: #ffdb4d;
+}

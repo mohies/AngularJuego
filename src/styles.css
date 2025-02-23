@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+/* Aplica la fuente "Pirata One" a todo el texto de la página */
+body {
+    font-family: 'Pirata One', cursive;
+  }
+  
+
+  h1, h2, .carousel-caption h5 {
+    font-family: 'Pirata One', cursive;
+    color: #f1c40f; 
+  }
+  
+/* Fondo de la página con las nubes de Los Simpsons */
+body {
+  background: url('../public/img/fondo.gif') no-repeat center top;
+  background-size: cover;
+  min-height: 100vh;
+  font-family: 'Luckiest Guy', cursive;
+}

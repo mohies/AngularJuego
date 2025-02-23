@@ -1,0 +1,45 @@
+<div class="container mt-4">
+  <div class="mb-3 d-flex align-items-center">
+    <input type="text" class="form-control me-2" placeholder="🔍 Buscar juegos..." (input)="buscarJuego($event)">
+    <select class="form-select" (change)="ordenarPor($event)">
+      <option value="" disabled selected>📌 Selecciona un criterio</option>
+      <option value="nombre">🔠 Nombre</option>
+      <option value="rating">⭐ Rating</option>
+      <option value="metacritic">🎯 Metacritic</option>
+    </select>
+  </div>
+
+  @if (imagen!=='') {
+  <div class="text-center mb-4">
+    <img [src]="imagen" alt="Plataforma seleccionada" class="platform-image">
+  </div>
+  }
+
+  <div class="row">
+    @for (game of juegos; track game.id) {
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card game-card shadow-lg">
+        <img [src]="game.background_image" class="card-img-top" alt="{{ game.name }}" (click)="verDetalles(game.id)" style="cursor: pointer;">
+        <div class="card-body">
+          <h5 class="card-title">{{ game.name }}</h5>
+          <p><strong>Lanzamiento:</strong> {{ game.released }}</p>
+          <p><strong>Metacritic:</strong> <span class="badge bg-success">{{ game.metacritic }}</span></p>
+          <p><strong>Valoración:</strong> <span class="badge bg-warning text-dark">⭐ {{ game.rating }}/5</span></p>
+          @if (isAuthenticated === true) {
+            <button class="btn btn-sm" [class.btn-danger]="favoritos.includes(game.id)" [class.btn-outline-danger]="!favoritos.includes(game.id)"  
+            (click)="anadirFav(game)"> {{ favoritos.includes(game.id) ? '❌ Quitar de Favoritos' : '⭐ Añadir a Favoritos' }} </button>
+          }
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+
+  @if(!searching){
+  <div class="page-controls">
+    <button class="btn btn-primary" (click)="prevPage()" [disabled]="currentPage === 1">⏮ Anterior</button>
+    <span class="fs-4 mx-3">Página {{ currentPage }}</span>
+    <button class="btn btn-primary" (click)="nextPage()">Siguiente ⏭</button>
+  </div>
+  }
+</div>

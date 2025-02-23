@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  @if (game) {
+  <div class="card shadow-lg">
+    <img [src]="game.background_image" class="card-img-top" alt="{{ game.name }}">
+    <div class="card-body">
+      <h2 class="card-title">{{ game.name }}</h2>
+      <p class="text-muted">Lanzamiento: {{ game.released }}</p>
+      <p><strong>Metacritic:</strong> <span class="badge bg-success">{{ game.metacritic }}</span></p>
+      <p><strong>Valoración:</strong> <span class="badge bg-warning text-dark">⭐ {{ game.rating }}/5</span></p>
+      <p [innerHTML]="game.description"></p> <!--PARA QUE ANGULAR INTERPRETE EL HTM DEL ELEMENTO-->
+      <hr>
+      <h5>Plataformas:</h5>
+      <ul class="list-group">
+        @for (platform of game.platforms; track platform.platform.id) {
+        <li class="list-group-item">
+          <a (click)="verJuegosPorPlataforma(platform.platform.id)" class="text-primary" style="cursor: pointer;">
+            🎮 {{ platform.platform.name }}
+          </a>
+        </li>
+        }
+      </ul>
+      <hr>
+      <a [href]="game.website" class="btn btn-dark" target="_blank">Página Oficial</a>
+    </div>
+  </div>
+  } @else {
+  <p class="text-center fs-4">Cargando información del juego...</p>
+  }
+</div>

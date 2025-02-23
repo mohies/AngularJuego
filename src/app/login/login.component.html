@@ -1,0 +1,34 @@
+<div class="container mt-5">
+  <div class="card shadow-lg p-4">
+    <h2 class="text-center text-primary">🔐 Iniciar Sesión</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <!-- Usuario -->
+      <div class="mb-3">
+        <label class="form-label">👤 Usuario</label>
+        <input type="text" class="form-control" formControlName="username" placeholder="Ingresa tu usuario">
+        @if (loginForm.get('username')!.touched && loginForm.get('username')!.invalid) {
+        <p class="text-danger">El usuario es obligatorio.</p>
+        }
+      </div>
+
+      <!-- Contraseña -->
+      <div class="mb-3">
+        <label class="form-label">🔑 Contraseña</label>
+        <input type="password" class="form-control" formControlName="password" placeholder="Ingresa tu contraseña">
+        @if (loginForm.get('password')!.touched && loginForm.get('password')!.invalid) {
+        <p class="text-danger">La contraseña es obligatoria.</p>
+        }
+      </div>
+
+      <!-- Botón de Login -->
+      <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">
+        🔓 Iniciar Sesión
+      </button>
+    </form>
+
+    @if (errorMessage !== '') {
+    <p class="text-center text-danger mt-3">{{ errorMessage }}</p>
+    }
+  </div>
+</div>

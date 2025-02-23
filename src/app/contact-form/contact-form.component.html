@@ -1,0 +1,73 @@
+<div class="container mt-5">
+  <div class="card shadow-lg p-4">
+    <h2 class="text-center text-primary">📩 Contacto</h2>
+    <p class="text-center text-muted">¿Tienes alguna consulta? ¡Escríbenos!</p>
+
+    <form [formGroup]="contactForm" (ngSubmit)="enviarFormulario()">
+      <!-- Nombre -->
+      <div class="mb-3">
+        <label class="form-label">👤 Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" placeholder="Escribe tu nombre">
+        @if(contactForm.get('nombre')!.touched && contactForm.get('nombre')!.invalid) {
+        <p class="text-danger">El nombre es obligatorio y debe tener al menos 3 caracteres.</p>
+        }
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label class="form-label">📧 Correo Electrónico</label>
+        <input type="email" class="form-control" formControlName="email" placeholder="Ejemplo: gamer@email.com">
+        @if(contactForm.get('email')!.touched && contactForm.get('email')!.invalid) {
+        <p class="text-danger">Introduce un correo válido.</p>
+        }
+      </div>
+
+      <!-- Asunto -->
+      <div class="mb-3">
+        <label class="form-label">📝 Asunto</label>
+        <input type="text" class="form-control" formControlName="asunto" placeholder="Escribe el asunto de tu mensaje">
+        @if(contactForm.get('asunto')!.touched && contactForm.get('asunto')!.invalid) {
+        <p class="text-danger">El asunto debe tener al menos 5 caracteres.</p>
+        }
+      </div>
+
+      <!-- Mensaje -->
+      <div class="mb-3">
+        <label class="form-label">💬 Mensaje</label>
+        <textarea class="form-control" rows="4" formControlName="mensaje" placeholder="Escribe tu mensaje"></textarea>
+        @if(contactForm.get('mensaje')!.touched && contactForm.get('mensaje')!.invalid) {
+        <p class="text-danger">El mensaje debe tener al menos 10 caracteres.</p>
+        }
+      </div>
+
+      <!-- Plataforma -->
+      <div class="mb-3">
+        <label class="form-label">🎮 Plataforma</label>
+        <select class="form-select" formControlName="plataforma">
+          <option value="" disabled selected>Elige tu plataforma</option>
+          <option value="PC">💻 PC</option>
+          <option value="PlayStation">🎮 PlayStation</option>
+          <option value="Xbox">🟢 Xbox</option>
+          <option value="Nintendo Switch">🔴 Nintendo Switch</option>
+        </select>
+        @if(contactForm.get('plataforma')!.touched && contactForm.get('plataforma')!.invalid) {
+        <p class="text-danger">Selecciona una plataforma.</p>
+        }
+      </div>
+
+      <!-- Aceptar Términos -->
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" formControlName="aceptarTerminos">
+        <label class="form-check-label">Acepto los términos y condiciones</label>
+        @if(contactForm.get('aceptarTerminos')!.touched && contactForm.get('aceptarTerminos')!.invalid) {
+        <p class="text-danger">Debes aceptar los términos.</p>
+        }
+      </div>
+
+      <!-- Botón de Enviar -->
+      <button type="submit" class="btn btn-primary w-100" [disabled]="contactForm.invalid">
+        ✉ Enviar Mensaje
+      </button>
+    </form>
+  </div>
+</div>
