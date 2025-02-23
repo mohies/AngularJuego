@@ -30,13 +30,15 @@
         <!-- MENU DESPLEGABLE SOLO SI EL USUARIO ESTÁ AUTENTICADO -->
         @if (isAuthenticated==true) {
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">👤 {{ usuario }}</a>
+          <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">👤 {{ usuario }}</a>
           <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item" routerLink="/favorites">⭐ Mis Favoritos</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item text-danger" (click)="logout()" style="cursor: pointer;">🚪 Cerrar Sesión</a></li>
+            <li><a class="dropdown-item text-danger" (click)="logout()" style="cursor: pointer;">🚪 Cerrar Sesión</a>
+            </li>
           </ul>
         </li>
         } @else {

@@ -13,6 +13,7 @@ export const routes: Routes = [
   { path: 'contacto', component: ContactFormComponent }, // ⬅ Nueva ruta para el formulario de contacto
   { path: 'login', component: LoginComponent },
   { path: 'favorites', component: FavoritesComponent },
+  { path: '**', redirectTo: '/home',  pathMatch:'full' } // Página no encontrada
   
 
   

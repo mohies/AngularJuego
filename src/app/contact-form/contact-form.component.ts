@@ -22,13 +22,13 @@ export class ContactFormComponent {
   }
 
   enviarFormulario() {
-    if (this.contactForm.valid) {
+
       const { asunto, mensaje } = this.contactForm.value;
 
       const mailtoLink = `mailto:soporte@gamezone.com?subject=${asunto}&body=${mensaje}`;
-  
+
       window.location.href = mailtoLink;
-    }
+    
   }
   
 }

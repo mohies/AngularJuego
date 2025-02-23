@@ -112,7 +112,7 @@ export class GameListComponent implements OnInit {
 // Función para añadir o eliminar un juego de favoritos
   anadirFav(game: any) {
     if (this.favoritos.includes(game.id) == false) {
-      this.favoritoService.añadirFav(game.id, game.name).subscribe(() => {
+        this.favoritoService.añadirFav(game.id, game.name).subscribe(() => {
         this.favoritos.push(game.id);
       });
     } else {
@@ -157,7 +157,12 @@ export class GameListComponent implements OnInit {
   }
   // Función para ordenar los juegos por nombre, rating o metacritic
   ordenarPor(event: any){
-    let criterio = event.target ? event.target.value : event;
+    let criterio;
+    if (event.target) {
+      criterio = event.target.value;
+    } else {
+      criterio = event;
+    }
     if (criterio !== '') {
       this.ordenActual = criterio;
       if (criterio === 'nombre') {
