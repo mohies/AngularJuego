@@ -12,7 +12,7 @@ export class FavoritesComponent implements OnInit {
 
   constructor(private favoritoService: FavoritoService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.cargaFavoritos();
   }
 

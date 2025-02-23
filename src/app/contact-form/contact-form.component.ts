@@ -21,7 +21,7 @@ export class ContactFormComponent {
     });
   }
 
-  enviarFormulario(): void {
+  enviarFormulario() {
     if (this.contactForm.valid) {
       const { asunto, mensaje } = this.contactForm.value;
 

@@ -124,7 +124,7 @@ export class GameListComponent implements OnInit {
 
 
   // Función para buscar un juego por nombre
-  buscarJuego(event: any): void {
+  buscarJuego(event: any) {
     const nombreJuego = event.target.value.trim();
     if (nombreJuego !== '') {
       this.searching = true;
@@ -140,12 +140,12 @@ export class GameListComponent implements OnInit {
   }
 
   // Función para paginar
-  nextPage(): void {
+  nextPage() {
     this.currentPage++;
     this.cargarJuegos();
   }
   // Función para paginar hacia atrás
-  prevPage(): void {
+  prevPage() {
     if (this.currentPage > 1) {
       this.currentPage--;
       this.cargarJuegos();
