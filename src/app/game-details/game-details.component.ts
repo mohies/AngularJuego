@@ -14,8 +14,8 @@ export class GameDetailsComponent implements OnInit {
 
   ngOnInit() {
     // Obtener el ID del juego desde la URL
-    this.route.params.subscribe(param => {
-      const gameId = param['id']; // Extrae el ID desde la URL
+    this.route.params.subscribe(link => {
+      const gameId = link['id']; // Extrae el ID desde la URL
       if (gameId) {
         // Llama a la API para obtener detalles del juego
         this.rawgService.getGameDetails(gameId).subscribe(response => {
