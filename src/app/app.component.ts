@@ -1,12 +1,12 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { RouterModule, RouterOutlet, Router } from '@angular/router';
 import { AuthService } from './servicio/auth.service';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, RouterOutlet, CommonModule],
+  imports: [RouterModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
